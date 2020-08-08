@@ -11,7 +11,8 @@ CREATE TABLE IF NOT EXISTS 'users'
 CREATE TABLE IF NOT EXISTS 'orders'
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    created_date DATETIME NOT NULL
+    created_date DATETIME NOT NULL,
+    user_id INTEGER NOT NULL REFERENCES users(id)
 );
 
 -- CHECK (mycolumn IN (0,1)
