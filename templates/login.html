@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    login
+{% endblock %}
+
+{% block main %}
+    <main class="text-center sign_in_body">
+        <form class="form-signin" action="/login" method="post">
+          <h1 class="h3 mb-3 font-weight-normal sign_in_heading">Please sign in</h1>
+
+          <label for="inputusername" class="sr-only ">username</label>
+          <input type="text" id="inputtext" class="form-control username" placeholder="username" name = "username" required autofocus>
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control sign_password" placeholder="Password"  name="password"required>
+        <div class="checkbox mb-3 sign_checkbox">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">&copy; 2017-2020</p>
+    </form>
+    </main>
+{% endblock%}

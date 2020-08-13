@@ -1,0 +1,91 @@
+.v_head{
+    color:#063b00;
+    font-size: 25px;
+    font-family: cursive;
+}
+.o_head{
+    color:#0a5d00;
+    font-size: 25px;
+    font-family: cursive;
+}
+.mid_v{
+    color: #089000;
+    font-size: 25px;
+    font-family: cursive;
+}
+.highen{
+    color: #089000;
+    font-size: 25px;
+    font-family: cursive;
+}
+.s_head{
+    color: #089000;
+    font-size: 25px;
+    font-family: cursive;
+}
+.store_head{
+    font-size: 16px;
+}
+.logo{
+    margin-bottom: 5px;
+    font-weight: bolder;
+}
+.login_head{
+    margin-top: 2px;
+    margin-right: 2px;
+    font-family: sans-serif;
+    color:black;
+    margin-bottom: 2px;
+}
+.links_btn{
+    color:black;
+}
+
+.back-to-school-carousel-caption {
+    left: 5%;
+    top: 15%;
+    right: auto;
+    text-align: left;
+
+    /* TODO: May want to adjust this. Also need to handle responsive */
+    width: 100%;
+}
+.slide_one{
+    color: white;
+    width:30%;
+    font-size:30px
+}
+.slide_two{
+    color:black;
+    width:35px;
+    font-size:25px;
+}
+.slide_three{
+    color:black;
+
+    font-size:25px;
+}
+.round_buttons{
+    margin-top:60px;
+    text-align:center;
+}
+.sign_in_heading{
+    margin-top:100px;
+}
+.sign_password{
+    margin-top:30px;
+}
+.sign_checkbox{
+     margin-top:30px;
+}
+.register-heading{
+    text-align:center;
+}
+.nav_account{
+    margin-bottom:25px;
+    color:black;
+}
+.top_name{
+    padding:15px;
+    margin-bottom:5px;
+}
