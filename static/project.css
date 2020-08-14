@@ -82,10 +82,8 @@
     text-align:center;
 }
 .nav_account{
-    margin-bottom:25px;
     color:black;
 }
-.top_name{
-    padding:15px;
-    margin-bottom:5px;
+.navbar-username {
+    padding: .5rem 1rem;
 }
