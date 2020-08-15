@@ -6,11 +6,10 @@
 
 {% block main %}
     <main class="text-center sign_in_body">
-        <form class="form-signin" action="/login" method="post">
+        <form class="form-signin-register" action="/login" method="post">
           <h1 class="h3 mb-3 font-weight-normal sign_in_heading">Please sign in</h1>
-
-          <label for="inputusername" class="sr-only ">username</label>
-          <input type="text" id="inputtext" class="form-control username" placeholder="username" name = "username" required autofocus>
+          <label for="inputusername" class="sr-only ">Username</label>
+          <input type="text" id="inputtext" class="form-control username" placeholder="Username" name = "username" required autofocus>
           <label for="inputPassword" class="sr-only">Password</label>
           <input type="password" id="inputPassword" class="form-control sign_password" placeholder="Password"  name="password"required>
         <div class="checkbox mb-3 sign_checkbox">
