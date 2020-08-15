@@ -3,18 +3,17 @@ import datetime
 import requests
 import urllib.parse
 
-
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-from index import make_index_route
-from login import make_login_route
-from register import make_register_route
-from logout import make_logout_route
-from change_password import make_change_password_route
+from routes.index import make_index_route
+from routes.login import make_login_route
+from routes.register import make_register_route
+from routes.logout import make_logout_route
+from routes.change_password import make_change_password_route
 from functools import wraps
 
 app = Flask(__name__)

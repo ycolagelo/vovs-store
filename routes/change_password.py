@@ -5,7 +5,7 @@ from cs50 import SQL
 from flask import render_template, session, request, redirect
 import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
-from login_required import login_required
+from helpers.login_required import login_required
 
 db = SQL("sqlite:///program.db")
 
@@ -57,8 +57,3 @@ def make_change_password_route(app):
                 return redirect("/login")
         else:
             return render_template("change_password.html")
-
-
-
-
-
