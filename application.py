@@ -38,11 +38,3 @@ make_login_route(app)
 make_register_route(app)
 make_logout_route(app)
 make_change_password_route(app)
-
-def login_required(f):
-    @wraps(f)
-    def decorated_function(*args, **kwargs):
-        if session.get("user_id") is None:
-            return redirect("/login")
-        return f(*args, **kwargs)
-    return("please log in")
