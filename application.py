@@ -14,6 +14,7 @@ from routes.login import make_login_route
 from routes.register import make_register_route
 from routes.logout import make_logout_route
 from routes.change_password import make_change_password_route
+from routes.product_page import make_product_page_route
 from functools import wraps
 
 app = Flask(__name__)
@@ -38,3 +39,4 @@ make_login_route(app)
 make_register_route(app)
 make_logout_route(app)
 make_change_password_route(app)
+make_product_page_route(app)

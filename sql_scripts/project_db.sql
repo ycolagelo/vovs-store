@@ -58,14 +58,31 @@ CREATE TABLE IF NOT EXISTS 'cart_product'
    FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
+CREATE TABLE IF NOT EXISTS 'category'
+(
+   id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+   name VARCHAR(255) NOT NULL
+);
+
 CREATE TABLE IF NOT EXISTS 'product'
 (
    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
    name VARCHAR(255) NOT NULL,
-   image_url VARCHAR(255) NOT NULL,
    price NUMBER NOT NULL,
    active BOOLEAN NOT NULL,
-   created_date DATETIME NOT NULL
+   created_date DATETIME NOT NULL,
+   category_id INTEGER NOT NULL,
+   description TEXT NOT NULL,
+   FOREIGN KEY (category_id) REFERENCES category(id)
+);
+
+CREATE TABLE IF NOT EXISTS 'product_image'
+(
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    url VARCHAR(500) NOT NULL,
+    product_id INTEGER NOT NULL,
+    priority INTEGER,
+    FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
 CREATE TABLE IF NOT EXISTS 'oder_product'
@@ -77,6 +94,3 @@ CREATE TABLE IF NOT EXISTS 'oder_product'
     FOREIGN KEY(orders_id) REFERENCES oders(id)
     FOREIGN KEY(product_id) REFERENCES product(id)
 );
-
-
-
