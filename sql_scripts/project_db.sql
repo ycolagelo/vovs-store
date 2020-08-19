@@ -55,7 +55,8 @@ CREATE TABLE IF NOT EXISTS 'cart_product'
    product_id INTEGER NOT NULL,
    quantity INTEGER NOT NULL,
    FOREIGN KEY (cart_id) REFERENCES cart(id),
-   FOREIGN KEY (product_id) REFERENCES product(id)
+   FOREIGN KEY (product_id) REFERENCES product(id),
+   UNIQUE(product_id, cart_id)
 );
 
 CREATE TABLE IF NOT EXISTS 'category'
@@ -73,6 +74,7 @@ CREATE TABLE IF NOT EXISTS 'product'
    created_date DATETIME NOT NULL,
    category_id INTEGER NOT NULL,
    description TEXT NOT NULL,
+   short_description VARCHAR (80) NOT NULL,
    FOREIGN KEY (category_id) REFERENCES category(id)
 );
 

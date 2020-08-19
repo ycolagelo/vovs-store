@@ -3,30 +3,36 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Include the apple chancery font */
+@font-face {
+  font-family: appleChancery;
+  src: url(fonts/Apple-Chancery.ttf);
+}
+
 .v_head{
     color:#063b00;
     font-size: 25px;
-    font-family: cursive;
+    font-family: appleChancery;
 }
 .o_head{
     color:#0a5d00;
     font-size: 25px;
-    font-family: cursive;
+    font-family: appleChancery;
 }
 .mid_v{
     color: #089000;
     font-size: 25px;
-    font-family: cursive;
+    font-family: appleChancery;
 }
 .highen{
     color: #089000;
     font-size: 25px;
-    font-family: cursive;
+    font-family: appleChancery;
 }
 .s_head{
     color: #089000;
     font-size: 25px;
-    font-family: cursive;
+    font-family: appleChancery;
 }
 .store_head{
     font-size: 16px;
@@ -86,9 +92,7 @@ body {
 .register-heading{
     text-align:center;
 }
-.nav_account{
-    color:black;
-}
+
 .navbar-username {
     padding: .5rem 1rem;
 }
@@ -119,4 +123,48 @@ body {
 }
 .hp-top-product-name {
     padding-top: 10px;
+}
+
+.cart-link {
+
+}
+
+.search-form {
+    padding-right: 10px;
+}
+.cart_left_div{
+    background-color:white;
+}
+.subtotal{
+    margin-top:10px;
+    margin-bottom:10px;
+}
+.cart_table{
+    width:100%;
+}
+.cost{
+    text-align: right;
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.cart_button{
+    margin-top:40px;
+    margin-bottom:35px;
+}
+.subtotal{
+    font-weight:bold;
+    font-size:20px;
+}
+.left_side{
+    width:100%;
+}
+.cart-heading{
+    text-align:center;
+}
+
+.pp-alert-row {
+    height: 66px;
 }

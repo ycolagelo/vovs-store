@@ -5,9 +5,16 @@
 {% endblock %}
 
 {% block main %}
+    <div class="row pp-alert-row">
+        <div class="col-12">
+            <div id="atc-alert" class="alert alert-dismissible fade show d-none" role="alert">
+              <span id="atc-alert-text"></span>
+            </div>
+        </div>
+    </div>
     <div class="row">
         <div class="col-lg-6">
-            <div class="row">
+            <div class="row m-0">
                 <div class="col-2 p-0">
                     {% for image in images %}
                         <div class="product-thumbnail-container" role="button" data-image-url="{{ image.url }}">
@@ -24,13 +31,12 @@
             <h2>{{ product.name }}</h2>
             <p>{{ product.category_name }}</p>
             <strong>${{ product.price }}</strong>
-            <form>
+            <form id="add-to-cart-form">
                 <div class="form-row">
                     <div class="form-group col-lg-2">
-                        <input class="form-control" type="number" min="1" step="1" value="1" />
+                        <input id="quantity-input" class="form-control" type="number" min="1" step="1" value="{{ cart_count }}" />
                     </div>
                 </div>
-
                 <div class="form-group">
                     <button type="submit" class="btn btn-primary">Add to Cart</button>
                 </div>
@@ -44,6 +50,7 @@
             </p>
         </div>
     </div>
+    <input id="product-info-data" type="hidden" data-product-id="{{ product.id }}" />
 {% endblock%}
 
 {% block scripts %}

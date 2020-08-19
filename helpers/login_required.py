@@ -9,3 +9,8 @@ def login_required(f):
             return redirect("/login")
         return f(*args, **kwargs)
     return decorated_function
+
+def is_logged_in():
+    if session.get("user_id") is None:
+        return False
+    return True

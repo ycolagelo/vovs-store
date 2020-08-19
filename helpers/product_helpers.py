@@ -7,7 +7,8 @@ def get_product(product_id):
         SELECT p.name,
             c.name as "category_name",
             p.price,
-            p.description
+            p.description,
+            p.id
         FROM product p
         JOIN category c ON c.id = p.category_id
         where p.id = :product_id
