@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    cart
+    Cart
 {% endblock %}
 
 {% block main %}
@@ -11,13 +11,14 @@
     <div class="col-lg-8 cart-image-side">
         <table class="left_side">
             <h4 class="cart-heading">Your shopping cart</h4>
-            <tr>
-                <td>image</td>
-                <td>name</td>
-                <td>Quantity/button</td>
-                <td>Price</td>
-            </tr>
-
+            {% for item in items %}
+                <tr>
+                    <td><img class="cart-image" src="{{item.url}}" /></td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.price}}</td>
+                </tr>
+            {% endfor%}
         </table>
     </div>
 
@@ -25,23 +26,23 @@
             <table class="cart_table">
                 <tr>
                     <td class="subtotal">Subtotal:</td>
-                    <td class="cost subtotal">$8.97</td>
+                    <td class="cost subtotal">${{cart.subtotal}}</td>
                 </tr>
                 <tr>
                    <td>Shipping:</td>
-                   <td class="cost">$5.97</td>
+                   <td class="cost">${{cart.shipping}}</td>
                 </tr>
                 <tr>
                     <td>Handling fee:</td>
-                    <td class="cost">$5.00</td>
+                    <td class="cost">${{cart.handling}}</td>
                 </tr>
                 <tr>
                     <td>13% HST</td>
-                    <td class="cost">$2.48</td>
+                    <td class="cost">${{cart.hst}}</td>
                 </tr>
                 <tr>
                     <td class="subtotal">Estimated total:</td>
-                    <td class="cost subtotal">$21.52</td>
+                    <td class="cost subtotal">${{cart.finalTotal}}</td>
                 </tr>
             </table>
             <a href="/checkout" class="btn btn-primary cart_button" type="submit">Proceed to checkout</a>

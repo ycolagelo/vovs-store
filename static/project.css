@@ -1,6 +1,6 @@
 body {
-    background: linear-gradient(#ffeeee, #ddeffb);
-    background-repeat: no-repeat;
+  background: linear-gradient(#ffeeee, #ddeffb);
+  background-repeat: no-repeat;
 }
 
 /* Include the apple chancery font */
@@ -9,92 +9,92 @@ body {
   src: url(fonts/Apple-Chancery.ttf);
 }
 
-.v_head{
-    color:#063b00;
-    font-size: 25px;
-    font-family: appleChancery;
+.v_head {
+  color: #063b00;
+  font-size: 25px;
+  font-family: appleChancery;
 }
-.o_head{
-    color:#0a5d00;
-    font-size: 25px;
-    font-family: appleChancery;
+.o_head {
+  color: #0a5d00;
+  font-size: 25px;
+  font-family: appleChancery;
 }
-.mid_v{
-    color: #089000;
-    font-size: 25px;
-    font-family: appleChancery;
+.mid_v {
+  color: #089000;
+  font-size: 25px;
+  font-family: appleChancery;
 }
-.highen{
-    color: #089000;
-    font-size: 25px;
-    font-family: appleChancery;
+.highen {
+  color: #089000;
+  font-size: 25px;
+  font-family: appleChancery;
 }
-.s_head{
-    color: #089000;
-    font-size: 25px;
-    font-family: appleChancery;
+.s_head {
+  color: #089000;
+  font-size: 25px;
+  font-family: appleChancery;
 }
-.store_head{
-    font-size: 16px;
+.store_head {
+  font-size: 16px;
 }
-.logo{
-    margin-bottom: 5px;
-    font-weight: bolder;
+.logo {
+  margin-bottom: 5px;
+  font-weight: bolder;
 }
-.login_head{
-    margin-top: 2px;
-    margin-right: 2px;
-    font-family: sans-serif;
-    color:black;
-    margin-bottom: 2px;
+.login_head {
+  margin-top: 2px;
+  margin-right: 2px;
+  font-family: sans-serif;
+  color: black;
+  margin-bottom: 2px;
 }
-.links_btn{
-    color:black;
+.links_btn {
+  color: black;
 }
 
 .back-to-school-carousel-caption {
-    left: 5%;
-    top: 15%;
-    right: auto;
-    text-align: left;
+  left: 5%;
+  top: 15%;
+  right: auto;
+  text-align: left;
 
-    /* TODO: May want to adjust this. Also need to handle responsive */
-    width: 100%;
+  /* TODO: May want to adjust this. Also need to handle responsive */
+  width: 100%;
 }
-.slide_one{
-    color: white;
-    width:30%;
-    font-size:30px
+.slide_one {
+  color: white;
+  width: 30%;
+  font-size: 30px;
 }
-.slide_two{
-    color:black;
-    width:35px;
-    font-size:25px;
+.slide_two {
+  color: black;
+  width: 35px;
+  font-size: 25px;
 }
-.slide_three{
-    color:black;
+.slide_three {
+  color: black;
 
-    font-size:25px;
+  font-size: 25px;
 }
-.round_buttons{
-    margin-top:60px;
-    text-align:center;
+.round_buttons {
+  margin-top: 60px;
+  text-align: center;
 }
-.sign_in_heading{
-    margin-top:100px;
+.sign_in_heading {
+  margin-top: 100px;
 }
-.sign_password{
-    margin-top:30px;
+.sign_password {
+  margin-top: 30px;
 }
-.sign_checkbox{
-     margin-top:30px;
+.sign_checkbox {
+  margin-top: 30px;
 }
-.register-heading{
-    text-align:center;
+.register-heading {
+  text-align: center;
 }
 
 .navbar-username {
-    padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .form-signin-register {
@@ -105,66 +105,71 @@ body {
 }
 
 .product-image {
-    width: 100%;
-    /*height: 300px;*/
+  width: 100%;
+  /*height: 300px;*/
 }
 
 .product-thumbnail-container {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 .product-description {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .hp-top-product-image {
-    width: 140px;
-    height: 140px;
+  width: 140px;
+  height: 140px;
 }
 .hp-top-product-name {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .cart-link {
-
 }
 
 .search-form {
-    padding-right: 10px;
+  padding-right: 10px;
 }
-.cart_left_div{
-    background-color:white;
+.cart_left_div {
+  background-color: white;
 }
-.subtotal{
-    margin-top:10px;
-    margin-bottom:10px;
+.subtotal {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
-.cart_table{
-    width:100%;
+.cart_table {
+  width: 100%;
 }
-.cost{
-    text-align: right;
+.cost {
+  text-align: right;
 }
-th, td {
+th,
+td {
   padding: 8px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-.cart_button{
-    margin-top:40px;
-    margin-bottom:35px;
+.cart_button {
+  margin-top: 40px;
+  margin-bottom: 35px;
 }
-.subtotal{
-    font-weight:bold;
-    font-size:20px;
+.subtotal {
+  font-weight: bold;
+  font-size: 20px;
 }
-.left_side{
-    width:100%;
+.left_side {
+  width: 100%;
 }
-.cart-heading{
-    text-align:center;
+.cart-heading {
+  text-align: center;
 }
 
 .pp-alert-row {
-    height: 66px;
+  height: 66px;
+}
+
+.cart-image {
+  width: 100px;
+  height: 100px;
 }

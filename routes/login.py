@@ -9,6 +9,7 @@ from werkzeug.security import check_password_hash, generate_password_hash
 
 db = SQL("sqlite:///program.db")
 
+
 def make_login_route(app):
     @app.route("/login", methods=["GET", "POST"])
     def login():
@@ -22,7 +23,8 @@ def make_login_route(app):
                 return("Please provide password")
             password = request.form.get("Password")
 
-            rows = db.execute("SELECT * FROM user WHERE username=:username", username=username)
+            rows = db.execute(
+                "SELECT * FROM user WHERE username=:username", username=username)
 
             if len(rows) != 1 or not check_password_hash(rows[0]["hash"], request.form.get("password")):
                 return ("invalid username and or Password")
@@ -32,6 +34,5 @@ def make_login_route(app):
             session["username"] = rows[0]["username"]
 
             return redirect("/")
-
         else:
             return render_template("login.html")

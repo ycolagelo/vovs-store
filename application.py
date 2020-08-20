@@ -21,12 +21,14 @@ from functools import wraps
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
+
 @app.after_request
 def after_request(response):
     response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
     response.headers["Expires"] = 15
     response.headers["Pragma"] = "no-cache"
     return response
+
 
 # Configure session to use filesystem (instead of signed cookies)
 # todo ask Pat about this functionality
