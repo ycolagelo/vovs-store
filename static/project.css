@@ -1,6 +1,7 @@
 body {
   background: linear-gradient(#ffeeee, #ddeffb);
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* Include the apple chancery font */
