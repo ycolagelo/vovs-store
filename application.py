@@ -16,6 +16,7 @@ from routes.logout import make_logout_route
 from routes.change_password import make_change_password_route
 from routes.product_page import make_product_page_route
 from routes.cart import make_cart_route
+from routes.checkout import make_checkout_route
 from functools import wraps
 
 app = Flask(__name__)
@@ -44,3 +45,4 @@ make_logout_route(app)
 make_change_password_route(app)
 make_product_page_route(app)
 make_cart_route(app)
+make_checkout_route(app)
