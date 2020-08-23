@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS 'tran'
     amount NUMBER NOT NULL,
     date DATETIME NOT NULL,
     type INTEGER NOT NULL,
-    orders_id INTEGER NOT NULL,
-    FOREIGN KEY (orders_id) REFERENCES orders(id)
+    order_id INTEGER NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 CREATE TABLE IF NOT EXISTS 'user_adress'
@@ -87,12 +87,12 @@ CREATE TABLE IF NOT EXISTS 'product_image'
     FOREIGN KEY (product_id) REFERENCES product(id)
 );
 
-CREATE TABLE IF NOT EXISTS 'oder_product'
+CREATE TABLE IF NOT EXISTS 'order_product'
 (
     id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-    orders_id INTEGER NOT NULL,
+    order_id INTEGER NOT NULL,
     product_id INTEGER NOT NULL,
     quantity INTEGER NOT NULL,
-    FOREIGN KEY(orders_id) REFERENCES oders(id)
+    FOREIGN KEY(order_id) REFERENCES orders(id)
     FOREIGN KEY(product_id) REFERENCES product(id)
 );
