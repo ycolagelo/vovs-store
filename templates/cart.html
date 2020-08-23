@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Cart
+Cart
 {% endblock %}
 
 {% block main %}
@@ -12,42 +12,42 @@
         <table class="left_side">
             <h4 class="cart-heading">Your shopping cart</h4>
             {% for item in items %}
-                <tr>
-                    <td><img class="cart-image" src="{{item.url}}" /></td>
-                    <td>{{item.name}}</td>
-                    <td>{{item.quantity}}</td>
-                    <td>{{item.price}}</td>
-                </tr>
+            <tr>
+                <td><img class="cart-image" src="{{item.url}}" /></td>
+                <td>{{item.name}}</td>
+                <td>{{item.quantity}}</td>
+                <td>{{ "${:,.2f}".format(item.price) }}</td>
+            </tr>
             {% endfor%}
         </table>
     </div>
 
-        <div class="col-lg-4 cart_left_div">
-            <table class="cart_table">
-                <tr>
-                    <td class="subtotal">Subtotal:</td>
-                    <td class="cost subtotal">${{cart.subtotal}}</td>
-                </tr>
-                <tr>
-                   <td>Shipping:</td>
-                   <td class="cost">${{cart.shipping}}</td>
-                </tr>
-                <tr>
-                    <td>Handling fee:</td>
-                    <td class="cost">${{cart.handling}}</td>
-                </tr>
-                <tr>
-                    <td>13% HST</td>
-                    <td class="cost">${{cart.hst}}</td>
-                </tr>
-                <tr>
-                    <td class="subtotal">Estimated total:</td>
-                    <td class="cost subtotal">${{cart.finalTotal}}</td>
-                </tr>
-            </table>
-            <a href="/checkout" class="btn btn-primary cart_button" type="submit">Proceed to checkout</a>
-        </div>
-
+    <div class="col-lg-4 cart_left_div">
+        <table class="cart_table">
+            <tr>
+                <td class="subtotal">Subtotal:</td>
+                <td class="cost subtotal">{{ "${:,.2f}".format(cart.subtotal) }}</td>
+            </tr>
+            <tr>
+                <td>Shipping:</td>
+                <td class="cost">{{ "${:,.2f}".format(cart.shipping) }}</td>
+            </tr>
+            <tr>
+                <td>Handling fee:</td>
+                <td class="cost">{{ "${:,.2f}".format(cart.handling) }}</td>
+            </tr>
+            <tr>
+                <td>13% HST</td>
+                <td class="cost">{{"${:,.2f}".format(cart.hst) }}</td>
+            </tr>
+            <tr>
+                <td class="subtotal">Estimated total:</td>
+                <td class="cost subtotal">{{"${:,.2f}".format(cart.finalTotal)}}</td>
+            </tr>
+        </table>
+        <a href="/checkout" class="btn btn-primary cart_button" type="submit">Proceed to checkout</a>
     </div>
+
+</div>
 </div>
 {% endblock%}
