@@ -33,7 +33,7 @@ def get_cart(user_id):
         SELECT id, user_id
         FROM cart
         WHERE user_id=:user_id
-        state = :state
+        and state = :state
     """, user_id=user_id, state=CART_STATE_ACTIVE)
     if len(rows) > 0:
         return rows[0]
@@ -50,7 +50,7 @@ def get_cart_count(cart_id, product_id):
         from cart_product
         where cart_id = :cart_id
         and product_id = :product_id
-    """, cart_id=cart_id, product_id=product_id, state=CART_STATE_ACTIVE)
+    """, cart_id=cart_id, product_id=product_id)
     if len(rows) != 1:
         return 0
     return rows[0]['quantity']
