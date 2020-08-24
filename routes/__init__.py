@@ -7,3 +7,4 @@ from .logout import make_logout_route
 from .register import make_register_route
 from .product_page import make_product_page_route
 from .login import make_login_route
+from .shop import make_shop_route

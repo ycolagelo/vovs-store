@@ -46,3 +46,18 @@ def get_top_products(num_products):
     """, num_products=num_products)
 
     return rows
+
+
+# Gets all active products along with 1 image for each. see above for example
+def get_products():
+    db = SQL("sqlite:///program.db")
+    rows = db. execute("""
+            select p.name, pi.url, p.id, p.price
+            from product p
+            join product_image pi on p.id = pi.product_id
+            where pi.id IN(
+                select id from product_image where product_id = p.id order by priority limit 1
+            )
+            and p.active = 1
+    """)
+    return rows

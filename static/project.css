@@ -178,3 +178,9 @@ td {
 .ohp-product-image {
   width: 100px;
 }
+.card-text {
+  height: 60px;
+}
+.product-card {
+  padding: 15px;
+}
