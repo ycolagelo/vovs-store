@@ -52,3 +52,24 @@ INSERT INTO "product" ("id","name","price","active","created_date","category_id"
 INSERT INTO "product_image" ("id","url","product_id","priority") VALUES ('8','https://i5.walmartimages.ca/images/Enlarge/131/376/6000199131376.jpg','3','0');
 INSERT INTO "product_image" ("id","url","product_id","priority") VALUES ('9','https://i5.walmartimages.ca/images/Large/131/390/6000199131390.jpg','3','1');
 INSERT INTO "product_image" ("id","url","product_id","priority") VALUES ('10','https://i5.walmartimages.ca/images/Enlarge/131/463/6000199131463.jpg','3','2');
+
+-- Product 4
+INSERT INTO "product" ("id","name","price","active","created_date","category_id","description","short_description") VALUES (4,'ABC Letters and Numbers Animal Card Board Matching Puzzle Game',23.77,1,'2020-08-24 17:06:36',3,'🌈Learning Letters & Numbers: Alphabets & Numbers Matching Cards Contains 36 flashcards(Alphabet A-Z and Number 1-10) and 36 smooth plastic blocks to correspond with the learning cards. Bright color and vivid picture can inspire your children''s interest in learning.
+🌈Fun & Education Game: Kids find the corresponding letters by color and corresponding animals, For example, C corresponds to a Cat, The number corresponds to the same number of animals, Lively and interesting teaching of letters and numbers, Will make children learn better and know many animals.
+🌈Benefit for Kids: Letter game can help children to develop eye-hand coordination, color recognition, fine motor skills, visual perception skills, problem-solving skills. Learn letters and numbers, as well as learn about animals and learn how to spell animals.
+🌈Preschool Learning Toys: Great abc & 123 matching cards for toddlers. This toddler flash cards set for 3 year old is an interesting way to learn while playing, making children enjoy the fun of learning. Ideal for early educational learning Kindergarten toddlers & preschools.
+🌈Child Safe: The alphabets and numbers teaching toy is made of safe, environmentally friendly, non-toxic, odorless BPA-free material as we value kids'' health, smooth edges keep your preschool boys and girls play safety.','');
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (11,'https://images-na.ssl-images-amazon.com/images/I/71SiQmlVI9L._AC_SL1442_.jpg',4,1);
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (12,'https://images-na.ssl-images-amazon.com/images/I/71XTUrpW5NL._AC_SL1464_.jpg',4,3);
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (13,'https://images-na.ssl-images-amazon.com/images/I/71lp5CtMPAL._AC_SL1452_.jpg',4,2);
+
+-- Product 5
+INSERT INTO "product" ("id","name","price","active","created_date","category_id","description","short_description") VALUES (5,'Borescope Inspection Camera with Color LCD Screen',67.99,1,'2020-08-24 17:12:55',1,'【Upgraded Version & More Convenient Application】The pipe inspection monitor can probe any hard-to-reach areas, such as underwater or dark environments; A great tool for checking drains, pipelines, HAVC systems, car, boat and aircraft engines, air vent mechanical devices and more.
+【HD LCD Display】2.31" LCD screen with 640 x 480 HD resolution, 2.0-megapixel CMOS, 8 levels of adjustable LED brightness, supports image rotation and contrast adjustment, help to reduce over expose and improve visibility in dark places, provide you with a better use experience.
+【IP67 Waterproof & Universal Application】 IP67 Waterproof allows it to work in multiple environments, great for checking blocked drains, HAVC systems, car, boat and aircraft engines, mechanical devices and more.
+【Sturdy and Durable】Semi-rigid snake camera tube for different shaping, textured handle for easy grip. Up to 6 hours of working hours to meet all your needs.
+【Accessories Come in Handy】IP67 waterproof rated flexible tube and lens, 2 hooks, 2 rubber rings, magnet and mirror for various conditions, also a portable carrying toolbox for on the go.','');
+
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (14,'https://images-na.ssl-images-amazon.com/images/I/71A7XfMP-oL._SL1500_.jpg',5,1);
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (15,'https://images-na.ssl-images-amazon.com/images/I/71--ODP-nKL._SL1500_.jpg',5,2);
+INSERT INTO "product_image" ("id","url","product_id","priority") VALUES (16,'https://images-na.ssl-images-amazon.com/images/I/716vlhKnLEL._SL1500_.jpg',5,5);

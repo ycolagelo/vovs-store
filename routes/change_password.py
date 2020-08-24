@@ -7,23 +7,23 @@ import datetime
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers.login_required import login_required
 
-db = SQL("sqlite:///program.db")
 
 def make_change_password_route(app):
-     @app.route("/change_password", methods=["GET", "POST"])
-     @login_required
-     def change_password():
+    @app.route("/change_password", methods=["GET", "POST"])
+    @login_required
+    def change_password():
+        db = SQL("sqlite:///program.db")
 
         if request.method == "POST":
             if not request.form.get("password"):
                 return("must provide previous passowrd")
-            password=request.form.get("password")
-            hashed_password= generate_password_hash(password)
+            password = request.form.get("password")
+            hashed_password = generate_password_hash(password)
 
             if not request.form.get("newPassword"):
                 return("must provide new password")
-            newPassword=request.form.get("newPassword")
-            hashed_newPassword =password = generate_password_hash(newPassword)
+            newPassword = request.form.get("newPassword")
+            hashed_newPassword = password = generate_password_hash(newPassword)
 
             if len(newPassword) < 6:
                 return("passowrd should have 6 characters")
@@ -38,8 +38,8 @@ def make_change_password_route(app):
 
             if not request.form.get("confirmPassword"):
                 return("must confirm password")
-            confirmPassword=request.form.get("confirmPassword")
-            #print(newPassword, confirmPassword)
+            confirmPassword = request.form.get("confirmPassword")
+            # print(newPassword, confirmPassword)
 
             if newPassword != confirmPassword:
                 return("passwords do not match")
@@ -47,12 +47,14 @@ def make_change_password_route(app):
             else:
                 user_id = session["user_id"]
 
-                rows = db.execute("SELECT hash from user WHERE id =:user_id", user_id=user_id)
+                rows = db.execute(
+                    "SELECT hash from user WHERE id =:user_id", user_id=user_id)
                 if len(rows) != 1:
                     return("username not found. Please register")
 
                 else:
-                    db.execute("UPDATE users SET hash=:hashed_newPassword WHERE id=:user_id", user_id=user_id,hashed_newPassword=hashed_newPassword)
+                    db.execute("UPDATE users SET hash=:hashed_newPassword WHERE id=:user_id",
+                               user_id=user_id, hashed_newPassword=hashed_newPassword)
 
                 return redirect("/login")
         else:

@@ -1,14 +1,9 @@
 from cs50 import SQL
 from constants.all import FIXED_SHIPPING_COST, FIXED_HANDLING_COST, CART_STATE_ACTIVE, CART_STATE_COMPLETE
 
-db = SQL("sqlite:///program.db")
-
-# Assumption: User only has one cart in the DB.
-# If we want to support multiple, we need to use the 'state'
-# column in cart to determine if a cart is active or not
-
 
 def is_product_in_cart(cart_id, product_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         select id
         from cart_product
@@ -22,6 +17,7 @@ def is_product_in_cart(cart_id, product_id):
 
 
 def create_cart(user_id):
+    db = SQL("sqlite:///program.db")
     db.execute("""
         insert into cart (user_id, state, created_date)
         values (:user_id, :state, datetime());
@@ -29,6 +25,7 @@ def create_cart(user_id):
 
 
 def get_cart(user_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         SELECT id, user_id
         FROM cart
@@ -45,6 +42,7 @@ def get_cart(user_id):
 
 
 def get_cart_count(cart_id, product_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         select quantity
         from cart_product
@@ -57,6 +55,7 @@ def get_cart_count(cart_id, product_id):
 
 
 def update_cart_count(cart_id, product_id, new_count):
+    db = SQL("sqlite:///program.db")
     # make sure to check if the qty < 1 (i.e. removed)
     if new_count < 1:
         # Delete
@@ -78,6 +77,7 @@ def update_cart_count(cart_id, product_id, new_count):
 
 
 def add_update_cart(product_id, new_count, user_id):
+    db = SQL("sqlite:///program.db")
     cart = get_cart(user_id)
 
     # Check if product exists in the cart already
@@ -93,6 +93,7 @@ def add_update_cart(product_id, new_count, user_id):
 
 
 def get_full_cart(user_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         select c.id, p.name, cp.quantity, pi.url, p.price, cp.product_id
         from cart c
@@ -128,6 +129,7 @@ def get_full_cart(user_id):
 
 
 def clear_cart(cart_id):
+    db = SQL("sqlite:///program.db")
     db.execute("""
         update cart set state = :state
         WHERE id=:cart_id

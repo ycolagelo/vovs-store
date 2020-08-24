@@ -1,8 +1,8 @@
 from cs50 import SQL
 
-db = SQL("sqlite:///program.db")
 
 def get_product(product_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         SELECT p.name,
             c.name as "category_name",
@@ -20,7 +20,9 @@ def get_product(product_id):
 
     return rows[0]
 
+
 def get_product_images(product_id):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         SELECT url, priority
         FROM product_image
@@ -30,7 +32,9 @@ def get_product_images(product_id):
 
     return rows
 
+
 def get_top_products(num_products):
+    db = SQL("sqlite:///program.db")
     rows = db.execute("""
         select p.name, pi.url, p.id
         from product p

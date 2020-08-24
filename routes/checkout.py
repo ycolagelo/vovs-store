@@ -30,9 +30,6 @@ def make_checkout_route(app):
 
             payment_info = {}  # todo
             place_order(user_id=session["user_id"], payment_info=payment_info)
-            return redirect("/")
-
-        # redirect to home page (or ideally make an order confirmation page)
-
+            return redirect("/order-history")
         else:
             return render_template("checkout.html")

@@ -20,7 +20,11 @@ document
 
     addUpdateCart(productId, quantity)
       .then((response) => {
-        showAlert(false, "Successfuly added item to cart");
+        showAlert(
+          false,
+          "Successfuly added item to cart",
+          "<a href='/cart'>View Cart</a>"
+        );
         console.log("success", response);
       })
       .catch((err) => {
@@ -29,10 +33,11 @@ document
       });
   });
 
-function showAlert(isError, alertText) {
+function showAlert(isError, alertText, rightSideHtml) {
   let alertElement = document.querySelector("#atc-alert");
   alertElement.classList.remove("d-none");
   document.querySelector("#atc-alert-text").innerText = alertText;
+  document.querySelector("#atc-alert-textright-side").innerHTML = rightSideHtml;
 
   if (isError) {
     alertElement.classList.add("alert-danger");

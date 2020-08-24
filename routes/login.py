@@ -1,5 +1,3 @@
-
-
 from cs50 import SQL
 from flask import Flask, flash, jsonify, redirect, render_template, request, session
 from flask_session import Session
@@ -7,12 +5,11 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 
-db = SQL("sqlite:///program.db")
-
 
 def make_login_route(app):
     @app.route("/login", methods=["GET", "POST"])
     def login():
+        db = SQL("sqlite:///program.db")
         session.clear()
         if request.method == "POST":
             if not request.form.get("username"):

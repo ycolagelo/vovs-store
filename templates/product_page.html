@@ -1,58 +1,60 @@
 {% extends "layout.html" %}
 
 {% block title %}
-    Product Page | Vov's Store
+Product Page | Vov's Store
 {% endblock %}
 
 {% block main %}
-    <div class="row pp-alert-row">
-        <div class="col-12">
-            <div id="atc-alert" class="alert alert-dismissible fade show d-none" role="alert">
-              <span id="atc-alert-text"></span>
+<div class="row pp-alert-row">
+    <div class="col-12">
+        <div id="atc-alert" class="alert alert-dismissible fade show d-none" role="alert">
+            <span id="atc-alert-text"></span>
+            <span class="float-right" id="atc-alert-textright-side"></span>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="row m-0">
+            <div class="col-2 p-0">
+                {% for image in images %}
+                <div class="product-thumbnail-container" role="button" data-image-url="{{ image.url }}">
+                    <img class="product-thumbnail img-thumbnail" src="{{ image.url }}" alt="product-image" />
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-10">
+                <img class="product-image" src="{{ images[0].url }}" alt="product-image" />
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col-lg-6">
-            <div class="row m-0">
-                <div class="col-2 p-0">
-                    {% for image in images %}
-                        <div class="product-thumbnail-container" role="button" data-image-url="{{ image.url }}">
-                            <img class="product-thumbnail img-thumbnail" src="{{ image.url }}" alt="product-image" />
-                        </div>
-                    {% endfor %}
-                </div>
-                <div class="col-10">
-                    <img class="product-image" src="{{ images[0].url }}" alt="product-image" />
+    <div class="col-lg-6">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.category_name }}</p>
+        <strong>${{ product.price }}</strong>
+        <form id="add-to-cart-form">
+            <div class="form-row">
+                <div class="form-group col-lg-2">
+                    <input id="quantity-input" class="form-control" type="number" min="1" step="1"
+                        value="{{ cart_count }}" />
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <h2>{{ product.name }}</h2>
-            <p>{{ product.category_name }}</p>
-            <strong>${{ product.price }}</strong>
-            <form id="add-to-cart-form">
-                <div class="form-row">
-                    <div class="form-group col-lg-2">
-                        <input id="quantity-input" class="form-control" type="number" min="1" step="1" value="{{ cart_count }}" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Add to Cart</button>
-                </div>
-            </form>
-        </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Add to Cart</button>
+            </div>
+        </form>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <p class="product-description">
-                {{ product.description }}
-            </p>
-        </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <p class="product-description">
+            {{ product.description }}
+        </p>
     </div>
-    <input id="product-info-data" type="hidden" data-product-id="{{ product.id }}" />
+</div>
+<input id="product-info-data" type="hidden" data-product-id="{{ product.id }}" />
 {% endblock%}
 
 {% block scripts %}
-    <script src="/static/js/product-page.js"></script>
+<script src="/static/js/product-page.js"></script>
 {% endblock %}

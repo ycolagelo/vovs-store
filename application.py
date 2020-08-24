@@ -1,3 +1,4 @@
+from functools import wraps
 import os
 import datetime
 import requests
@@ -9,15 +10,9 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
-from routes.index import make_index_route
-from routes.login import make_login_route
-from routes.register import make_register_route
-from routes.logout import make_logout_route
-from routes.change_password import make_change_password_route
-from routes.product_page import make_product_page_route
-from routes.cart import make_cart_route
-from routes.checkout import make_checkout_route
-from functools import wraps
+from routes import make_cart_route, make_change_password_route, make_checkout_route, \
+    make_index_route, make_login_route, make_register_route, make_product_page_route, \
+    make_logout_route, make_order_history_route
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -46,3 +41,4 @@ make_change_password_route(app)
 make_product_page_route(app)
 make_cart_route(app)
 make_checkout_route(app)
+make_order_history_route(app)

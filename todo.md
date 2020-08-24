@@ -9,8 +9,8 @@
 
 
 ## General
-- use the `state` field for `cart` - update checkout and cart stuff
 - move DB exectues to a DAL
+- add unit tests!
 
 ## Pages to add
 - order history page

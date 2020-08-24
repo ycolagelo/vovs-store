@@ -2,12 +2,11 @@ from cs50 import SQL
 from helpers.cart_helpers import add_update_cart, get_full_cart, clear_cart
 from constants.all import TRAN_TYPE_PURCHASE
 
-db = SQL("sqlite:///program.db")
-
 # payment_info: { postal_code: string, cc_number: number, cc_name, cc_expiry, cvv }
 
 
 def place_order(user_id, payment_info):
+    db = SQL("sqlite:///program.db")
     cart = get_full_cart(user_id)
     order_id = db.execute("""
         insert into orders (created_date, user_id) 
