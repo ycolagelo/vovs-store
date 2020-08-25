@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+reorder
+{% endblock%}
+
+{% block main%}
+
+<h3 class="reorder-header"> Previous Orders</h3>
+<div>
+    {% for row in rows%}
+    <div class="row bg-light order-divs">
+        <div class="col-4">
+            <img class="reoder-img" src="{{row.url}}"></img>
+        </div>
+        <div class="col-4 reorder-body">
+            <p>{{row.name}}</p>
+            <span>{{row.price}}</span>
+        </div>
+        <div class="col-4 reorder-link">
+            <a href="/product/{{row.id}}">View details</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

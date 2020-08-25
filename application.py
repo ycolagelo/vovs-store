@@ -12,7 +12,7 @@ from werkzeug.exceptions import default_exceptions, HTTPException, InternalServe
 from werkzeug.security import check_password_hash, generate_password_hash
 from routes import make_cart_route, make_change_password_route, make_checkout_route, \
     make_index_route, make_login_route, make_register_route, make_product_page_route, \
-    make_logout_route, make_order_history_route, make_shop_route
+    make_logout_route, make_order_history_route, make_shop_route, make_reorder_route
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -43,3 +43,4 @@ make_cart_route(app)
 make_checkout_route(app)
 make_order_history_route(app)
 make_shop_route(app)
+make_reorder_route(app)

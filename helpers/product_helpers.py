@@ -61,3 +61,34 @@ def get_products():
             and p.active = 1
     """)
     return rows
+
+
+def get_purchased_products(user_id):
+    db = SQL("sqlite:///program.db")
+    rows = db.execute("""
+        select p.name, p.price, p.id,  pi.url
+        from product p
+        join product_image pi on p.id = pi.product_id
+        where p.id IN (
+            select op.product_id
+            from orders o
+            join order_product op on o.id=op.order_id
+            where user_id = :user_id
+            group by product_id
+        )
+        and pi.id IN (
+            select id from product_image where product_id = p.id order by priority limit 1
+        )
+        and p.active = 1;
+
+    """, user_id=user_id)
+    return rows
+
+
+# def luhn(input):
+#     digits = [int(c) for c in input if c.isdigit()]
+#     checksum = digits.pop()
+#     digits.reverse()
+#     doubled = [2*d for d in digits[0::2]]
+#     total = sum(d-9 if d > 9 else d for d in doubled) + sum(digits[1::2])
+#     return (total * 9) % 10 == checksum

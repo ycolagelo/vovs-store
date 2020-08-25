@@ -184,3 +184,24 @@ td {
 .product-card {
   padding: 15px;
 }
+.reoder-img {
+  width: 112px;
+  padding: 10px;
+}
+.order-divs {
+  padding: 20px;
+  border-bottom: 1px solid #dee3e8;
+}
+.order-divs:last-child {
+  border-bottom: none;
+}
+
+.reorder-body {
+  padding: 10px;
+}
+.reorder-link {
+  text-align: center;
+}
+.reorder-header {
+  padding: 15px;
+}
